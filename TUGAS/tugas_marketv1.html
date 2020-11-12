@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Tambahan Day 02</title>
+</head>
+
+<body>
+    <script>
+        //TUGAS MARKET 26 OCT
+        //UBAH SEMUA VARIABLE JD ARRAY
+        //Define semua variabel dalam array
+        //let harga = [10000, 20000, 3000]
+        let stock = []
+        //let total = []
+
+        //define stok masing masing produk
+        let stokApple = 10
+        let stokOrange = 10
+        let stokAnggur = 10
+
+        let hargaApple = 10000
+        let hargaOrange = 20000
+        let hargaAnggur = 30000
+
+        //define variabel untuk menampung input dari user
+        // let cart = [0,0,0]
+main : while (true) {
+
+        let stokAppleBaru = stokApple
+        let stokOrangeBaru = stokOrange
+        let stokAnggurBaru = stokAnggur
+
+        alert(`
+        DAFTAR HARGA TOKO :
+        APPLE 🍎 STOCK : ${stokAppleBaru} HARGA Rp ${hargaApple},00
+        ORANGE 🍊 STOCK : ${stokOrangeBaru} HARGA Rp ${hargaOrange},00
+        GRAPE 🍇 STOCK : ${stokAnggurBaru} HARGA Rp ${hargaAnggur},00
+        `)
+
+        let inputApple = 0
+        apelloop :while (true) {
+            inputApple = parseInt(prompt(`Masukan Jumlah Apple🍎 yang akan dibeli`))
+            if (inputApple > stokApple) {
+                alert("Apple 🍎 is out of stock")
+            } else if (isNaN(inputApple)) {
+                alert('wrong input')
+            } else {
+                break apelloop
+            }
+        }
+
+
+        let inputOrange = 0
+        orangeloop : while (true) {
+            inputOrange = parseInt(prompt(`Masukan Jumlah Orange🍊 yang akan dibeli`))
+            if (inputOrange > stokOrange) {
+                alert("Orange🍊 is out of stock")
+            } else if (isNaN(inputOrange)) {
+                alert('wrong input')
+            } else {
+                break orangeloop
+            }
+        }
+
+
+        let inputAnggur = 0
+        anggurloop : while (true) {
+            inputAnggur = parseInt(prompt(`Masukan Jumlah Grape🍇 yang akan dibeli`))
+            if (inputAnggur > stokAnggur) {
+                alert("Grape🍇 is out of stock")
+            } else if (isNaN(inputAnggur)) {
+                alert('wrong input')
+            } else {
+                break anggurloop
+            }
+        }
+
+        //CALCULATE TOTAL
+        //let total = [0,0,0]
+        let totalApple = inputApple * hargaApple
+        let totalOrange = inputOrange * hargaOrange
+        let totalAnggur = inputAnggur * hargaAnggur
+        let totalBelanja = totalApple + totalOrange + totalAnggur
+
+        let appleSisa = stokAppleBaru - inputApple
+        let orangeSisa = stokOrangeBaru - inputOrange
+        let anggurSisa = stokAnggurBaru - inputAnggur
+
+        //STOK DIKURANGI SEBELOM ALERT STOK TERAKHIR (PAKAI LOOP ATAU MANUAL)
+
+        alert(`
+        TOTAL APPLE🍎${totalApple}
+        TOTAL ORANGE🍊${totalOrange}
+        TOTAL ANGGUR🍇${totalAnggur}
+        TOTAL BELANJA 🍎🍊🍇${totalBelanja}
+        `)
+
+        //VARIABEL UNTUK INPUT HARGA BELANJA
+        alert (`
+        JUMLAH HARUS DIBAYAR : ${totalBelanja}
+        `)
+        
+        
+        //UNTUK CEK SISA BAYAR DLL
+        //let kembalianBayar = inputBayar - totalBelanja
+        //let inputBayar = 0
+        bayarloop : while (true) {
+            let inputBayar = parseInt(prompt('MASUKAN JUMLAH UANG UNTUK PEMBAYARAN'))
+            let kembalianBayar = inputBayar - totalBelanja
+            if (inputBayar < totalBelanja) {
+                alert(`JUMLAH YANG HARUS DIBAYAR ${totalBelanja}`)
+            } else if (inputBayar >= totalBelanja) {
+                alert(`JUMLAH KEMBALIAN ANDA ${kembalianBayar}`)
+            } else if (isNaN(inputBayar)) {
+                alert(`INPUT HARUS DIISI`)
+            }
+            break bayarloop 
+        }
+
+        alert(`
+        SISA STOCK 🍎${appleSisa}
+        SISA STOCK 🍊${orangeSisa}
+        SISA STOCK 🍇${anggurSisa}
+        `)
+
+        let confirmation = confirm(`APAKAH MAU BELANJA LAGI`)
+        if (confirmation == true) {
+        } else if (confirmation == false) {
+            break main
+        }
+} 
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+//1. buat aplikasi minta input bulan => outputnya tampilkan season/musim berdasarkan bulan (html)
+//semi, gugur, panas, dingin
+//check input => tdk boleh kosong, tidak boleh -, tidak boleh  > 12
+//dll
+
+//2. buat prog. untuk deret fibonacci, dimulai dari 0 - 25 (js)
+// 0,1,1,2,3,5,8,13,...
+
+//3. buat program untuk menampilkan angka genap dan angka ganjil dari 0-25 (HTML)
+
+//4. buat program untuk melipatgandakan string (HTML)
+//misalkan
+//inputnya : Hello & 4
+//outputnya ; Hello, Hello, Hello, Hello,... 

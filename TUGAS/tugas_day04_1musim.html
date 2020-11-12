@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEASONS</title>
+</head>
+<body>
+    <script>
+        let Bulan = parseInt(prompt('Masukkan Bulan untuk Mengetahui Musim'))
+        if (Bulan === 12 || Bulan <= 2) {
+            alert('Musim Dingin') 
+        } else if (Bulan >= 3 && Bulan <= 5) {
+            alert('Musim Semi')
+        } else if (Bulan >= 6 && Bulan <= 8) {
+            alert('Musim Panas')
+        } else if (Bulan >= 11 && Bulan <= 9) {
+            alert('Musim Gugur')
+        } else {
+            alert('Hanya ada 12 Bulan, masukan kembali angka yang sesuai')
+        }
+    </script>
+</body>
+</html>

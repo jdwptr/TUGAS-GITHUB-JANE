@@ -1,0 +1,8 @@
+TUGAS LANJUTKAN MARKET :
+- tampilkan menu belanja berupa produk, stok dan harga (DALEM LOOPING AWAL)
+1. apple , stock = 10 , harga = rp 15.000,00 /kg
+- setelah alert detail belanja => minta input pembayaran 
+(cek input pembayaran)
+- total belanja 10rb => input pembayaran 10rb
+- kalau ada sisa => tampilkan sisa pembayaran
+- KURANGI STOCK SEBELUM MINTA KONFIRMASI BELANJA LAGI

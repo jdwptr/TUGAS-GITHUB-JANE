@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRUIT MARKET FUNCTION</title>
+</head>
+
+<body>
+    <script>
+        let produk = ['APPLE 🍎', 'ORANGE 🍊', 'GRAPE 🍇']
+        let harga = [10000, 20000, 30000]
+        let stok = [10, 20, 30]
+        let buah = []
+        
+        //SHOW ALERT MENU
+        function showMenu () {
+            let menu = 'SELAMAT DATANG DI TOKO BUAH \n'
+            for (let i = 0; i < produk.length; i++) {
+                menu += `${i + 1}. ${produk[i]} STOCK = ${stok[i]} HARGA Rp ${harga[i]},00 \n`
+            }
+            alert(menu)
+        }
+        
+        //SHOW DETAIL BELANJA
+        // - buat function show detail belanja
+        // - buat function minta input
+        // - buat function kurangi stok
+
+main : while (true) {
+        /*alert(`
+        DAFTAR HARGA TOKO :
+        APPLE 🍎 STOCK : ${stok[0]} HARGA Rp ${harga[0]},00
+        ORANGE 🍊 STOCK : ${stok[1]} HARGA Rp ${harga[1]},00
+        GRAPE 🍇 STOCK : ${stok[2]} HARGA Rp ${harga[2]},00
+        `)*/
+        showMenu()
+    
+        let qty = new Array(produk.length)
+
+    function InputBuah () {
+        apelloop :while (true) {
+            qty[0] = parseInt(prompt(`Masukan Jumlah ${produk[0]} yang akan dibeli`))
+            if (qty[0] > stok[0]) {
+                alert(`${produk[0]} IS OUT OF STOCK`)
+            } else if (isNaN(qty[0])) {
+                alert('WRONG INPUT')
+            } else {
+                break apelloop
+            }
+        }
+
+        orangeloop : while (true) {
+            qty[1] = parseInt(prompt(`Masukan Jumlah ${produk[1]} yang akan dibeli`))
+            if (qty[1] > stok[1]) {
+                alert(`${produk[1]} IS OUT OF STOCK`)
+            } else if (isNaN(qty[1])) {
+                alert('WRONG INPUT')
+            } else {
+                break orangeloop
+            }
+        }
+
+        anggurloop : while (true) {
+            qty[2] = parseInt(prompt(`Masukan Jumlah ${produk[2]} yang akan dibeli`))
+            if (qty[2] > stok[2]) {
+                alert(`${produk[2]} IS OUT OF STOCK`)
+            } else if (isNaN(qty[2])) {
+                alert('WRONG INPUT')
+            } else {
+                break anggurloop
+            }
+        }
+    return qty
+    }
+    InputBuah ()
+
+        //CALCULATE TOTAL
+        let totalApple = qty[0] * harga[0]
+        let totalOrange = qty[1] * harga[1]
+        let totalAnggur = qty[2] * harga[2]
+
+        let total = [totalApple, totalOrange, totalAnggur]
+        
+        let totalBelanja = total.reduce((a, b) => a + b)
+        
+        let sisaStok = new Array(produk.length)
+        let hitungSisa = new Array(produk.length)
+
+        function StokSisa () {
+            for (let i = 0; i < produk.length; i++) {
+                let hitungSisa = stok[i] - qty [i]
+                sisaStok.push(hitungSisa[i])
+            }
+        return hitungSisa
+        return sisaStok
+        }
+        StokSisa ()
+
+        //STOK DIKURANGI SEBELOM ALERT STOK TERAKHIR (PAKAI LOOP ATAU MANUAL)
+
+        alert(`
+        TOTAL APPLE🍎${total[0]}
+        TOTAL ORANGE🍊${total[1]}
+        TOTAL ANGGUR🍇${total[2]}
+        TOTAL BELANJA 🍎🍊🍇${totalBelanja}
+        `)
+
+        //VARIABEL UNTUK INPUT HARGA BELANJA
+        alert (`
+        JUMLAH HARUS DIBAYAR : ${totalBelanja}
+        `)
+        
+        bayarloop : while (true) {
+            let inputBayar = parseInt(prompt('MASUKAN JUMLAH UANG UNTUK PEMBAYARAN'))
+            let kembalianBayar = inputBayar - totalBelanja
+            if (inputBayar < totalBelanja) {
+                alert(`JUMLAH YANG HARUS DIBAYAR ${totalBelanja}`)
+            } else if (inputBayar >= totalBelanja) {
+                alert(`JUMLAH KEMBALIAN ANDA ${kembalianBayar}`)
+            } else if (isNaN(inputBayar)) {
+                alert(`INPUT HARUS DIISI`)
+            }
+            break bayarloop 
+        }
+
+        alert(`
+        SISA STOCK 🍎${sisaStok[0]}
+        SISA STOCK 🍊${sisaStok[1]}
+        SISA STOCK 🍇${sisaStok[2]}
+        `)
+
+        let confirmation = confirm(`APAKAH MAU BELANJA LAGI`)
+        if (confirmation == true) {
+        } else if (confirmation == false) {
+            break main
+        }
+    }
+ 
+    </script>
+</body>
+
+</html>
